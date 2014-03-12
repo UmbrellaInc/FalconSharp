@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using RestSharp;
 
@@ -37,9 +38,21 @@ namespace FalconSharp.Extensions
 			if (resp.StatusCode == expectedStatusCode)
 			{
 				// Return success
-				var res = resp.Content.DeserializeJsonTo<TReturnType>();
-				res.Success = true;
-				return res;
+				try
+				{
+					var res = resp.Content.DeserializeJsonTo<TReturnType>();
+					res.Success = true;
+					return res;
+				}
+				catch (Exception ex)
+				{
+					return new TReturnType
+					{
+						Success = false,
+						ErrorMessage = ex.Message,
+						StackTrace = ex.StackTrace
+					};
+				}
 			}
 
 			// Return error
