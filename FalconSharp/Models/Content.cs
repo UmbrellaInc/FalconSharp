@@ -15,6 +15,9 @@ namespace FalconSharp.Models
 		public string Picture { get; set; }
 		public string Caption { get; set; }
 		public string Link { get; set; }
+		public string PermLink { get; set; }
+		public string FromId { get; set; }
+		public string FromName { get; set; }
 		public ContentType Type { get; set; }
 		public IEnumerable<string> Tags { get; set; }
 		public IDictionary<string, object> Stats { get; set; }
