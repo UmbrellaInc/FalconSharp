@@ -3,7 +3,13 @@
 	public enum ContentType
 	{
 		Text,
+		Status,
 		Photo,
-		Video
+		Video,
+		Link,
+		Album,
+		Offer,
+		Question,
+		Event
 	}
 }
