@@ -29,11 +29,11 @@ Get paged social content items, (limited to 10 and after 100) from a selected so
 * .NET 4.5 (Desktop / Server)
 
 
-## Contact
+## Getting Started
 
-Have a question?
+FalconSharp is available on NuGet.
 
-* [Raise an issue](https://github.com/UmbrellaInc/FalconSharp/issues) on GitHub
+	Install-Package FalconSharp
 
 
 ## Build
@@ -47,6 +47,13 @@ To clone it locally click the "Clone in Windows" button above or run the followi
 	git clone https://github.com/UmbrellaInc/FalconSharp.git FalconSharp
 	cd FalconSharp
 	.\build.cmd
+
+
+## Contact
+
+Have a question?
+
+* [Raise an issue](https://github.com/UmbrellaInc/FalconSharp/issues) on GitHub
 
 
 ## Contributing to this project
