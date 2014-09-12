@@ -1,6 +1,6 @@
 # FalconSharp
 
-FalconSharp is a client library targeting .NET 4.5 (and above) that interacts with the [Falcon Social](http://www.falconsocial.com/) API.
+FalconSharp is a client library targeting .NET 4.5 (and above) that interacts with the [Falcon Social](http://www.falconsocial.com/) Content API.
 
 
 ## Usage examples
@@ -31,7 +31,7 @@ Get paged social content items, (limited to 10 and after 100) from a selected so
 
 ## Getting Started
 
-FalconSharp is available on NuGet.
+[FalconSharp is available on NuGet](https://www.nuget.org/packages/FalconSharp).
 
 	Install-Package FalconSharp
 
