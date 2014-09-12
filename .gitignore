@@ -38,3 +38,5 @@ _ReSharper.*
 */log.txt
 /Assets/
 /Build/
+
+src/packages/*/**
