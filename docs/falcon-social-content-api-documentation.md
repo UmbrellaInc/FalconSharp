@@ -29,6 +29,8 @@ Result:
 
 Value: 
 
+| Name            | Description |
+|-----------------|-------------|
 | id              | The Channel ID within Falcon's system |
 | network         | The name of the network e.g. facebook, twitter, google+, etc. |
 | name            | The Channel Name within Falcon's system |
@@ -42,6 +44,8 @@ This will return an array of channels from the authorised organisation.
 
 Query parameters:
 
+| Name   | Description |
+|--------|-------------|
 | since  | date time in `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` format |
 | until  | date time in `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` format |
 | limit  | limits number of results - default is `50` |
@@ -77,7 +81,9 @@ Result:
 	]
 
 Value:
- 
+
+| Name        | Description |
+|-------------|-------------|
 | id          | The Content ID within Falcon's system |
 | network     | The name of the network ex. facebook, twitter, google+, and etc. |
 | status      | Content status: deleted, unread, vanished, read |
@@ -90,13 +96,4 @@ Value:
 | link        | This value can be optional is the URL of a link post (Facebook) |
 | type        | The type of content ex. photo |
 | tags        | This is a list of tagged |
-| stats       | The states on the content from the network.
-Facebook
-* "post_comments": 4,
-* "post_shares": 0,
-* "post_likes": 1,
-* "post_impressions_unique": 0,
-* "post_engaged_users": 0
-Twitter
-* "tweet_retweets":"0"
-* "tweet_favorites":"0" |
+| stats       | The states on the content from the network. |
