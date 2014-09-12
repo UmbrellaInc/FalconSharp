@@ -2,23 +2,51 @@
 
 FalconSharp is a client library targeting .NET 4.5 (and above) that interacts with the [Falcon Social](http://www.falconsocial.com/) API.
 
+
 ## Usage examples
 
-Get the social content from the first channel of the associated organisation account:
+List all of the social channels from the associated organisation account:
 
 	var falcon = new FalconClient("api_key");
 	var channels = falcon.GetChannels();
-	var content = falcon.GetContent(channels.Items.First().Id, limit: 10, offset:100);
+	foreach (var channel in channels.Items)
+	{
+		Console.WriteLine(channel.Name);
+	}
+
+Get paged social content items, (limited to 10 and after 100) from a selected social channel:
+
+	var falcon = new FalconClient("api_key");
+	var content = falcon.GetContent("channel_name", limit: 10, offset:100);
+	foreach (var item in content.Items)
+	{
+		Console.WriteLine("{0}: {1} - {2}", item.Network, item.Name, item.Message);
+	}
+
 
 ## Supported Platforms
 
 * .NET 4.5 (Desktop / Server)
+
 
 ## Contact
 
 Have a question?
 
 * [Raise an issue](https://github.com/UmbrellaInc/FalconSharp/issues) on GitHub
+
+
+## Build
+
+If you prefer, you can compile FalconSharp yourself, you'll need:
+
+* Visual Studio 2012 (or above)
+
+To clone it locally click the "Clone in Windows" button above or run the following git commands.
+
+	git clone https://github.com/UmbrellaInc/FalconSharp.git FalconSharp
+	cd FalconSharp
+	.\build.cmd
 
 
 ## Contributing to this project
