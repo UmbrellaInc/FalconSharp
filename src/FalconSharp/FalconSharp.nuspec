@@ -4,7 +4,7 @@
 		<id>FalconSharp</id>
 		<version>$version$</version>
 		<title>FalconSharp</title>
-		<authors>Lee Kelleher,Matt Brailsford</authors>
+		<authors>$author$</authors>
 		<owners>$author$</owners>
 		<licenseUrl>https://github.com/UmbrellaInc/FalconSharp/blob/master/LICENSE.md</licenseUrl>
 		<projectUrl>https://github.com/UmbrellaInc/FalconSharp</projectUrl>
