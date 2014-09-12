@@ -2,6 +2,6 @@
 {
 	public class FalconEntityResponse<TEntity> : FalconResponse
 	{
-		public TEntity Item { get; set; } 
+		public TEntity Item { get; set; }
 	}
 }

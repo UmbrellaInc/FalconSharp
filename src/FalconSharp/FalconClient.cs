@@ -13,6 +13,7 @@ namespace FalconSharp
 		private const string API_BASE_URL = "https://app.falconsocial.com/v1";
 
 		private string _apiKey;
+
 		private RestClient _restClient;
 
 		public FalconClient(string apiKey, IWebProxy proxy = null)
@@ -41,13 +42,13 @@ namespace FalconSharp
 		{
 			var parameters = new Dictionary<string, string>
 			{
-				{"channelId", channelId}
+				{ "channelId", channelId }
 			};
 
-			if(metrics != null && metrics.Length > 0)
+			if (metrics != null && metrics.Length > 0)
 				parameters.Add("metrics", string.Join(",", metrics));
 
-			if(since.HasValue)
+			if (since.HasValue)
 				parameters.Add("since", since.Value.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZZ"));
 
 			if (until.HasValue)
@@ -60,7 +61,7 @@ namespace FalconSharp
 				parameters.Add("offset", offset.Value.ToString(CultureInfo.InvariantCulture));
 
 			return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Content>>(
-				_apiKey, "channels/{channelId}/content", 
+				_apiKey, "channels/{channelId}/content",
 					parameters: parameters);
 		}
 	}
