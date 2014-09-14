@@ -1,6 +1,6 @@
 # FalconSharp
 
-FalconSharp is a client library targeting .NET 4.5 (and above) that interacts with the [Falcon Social](http://www.falconsocial.com/) Content API.
+FalconSharp is an unofficial client library for accessing the beta *Content API* from [Falcon Social](http://www.falconsocial.com/).
 
 
 ## Usage examples
