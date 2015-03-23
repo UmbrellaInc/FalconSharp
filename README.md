@@ -3,6 +3,33 @@
 FalconSharp is an unofficial client library for accessing the beta *Content API* from [Falcon Social](http://www.falconsocial.com/).
 
 
+## Supported Platforms
+
+* .NET 4.5 (Desktop / Server)
+
+
+## Getting Started
+
+### Installation
+
+[FalconSharp is available on NuGet](https://www.nuget.org/packages/FalconSharp).
+
+	Install-Package FalconSharp
+
+
+### Build
+
+If you prefer, you can compile FalconSharp yourself, you'll need:
+
+* Visual Studio 2012 (or above)
+
+To clone it locally click the "Clone in Windows" button above or run the following git commands.
+
+	git clone https://github.com/UmbrellaInc/FalconSharp.git FalconSharp
+	cd FalconSharp
+	.\build.cmd
+
+
 ## Usage examples
 
 List all of the social channels from the associated organisation account:
@@ -24,31 +51,6 @@ Get paged social content items, (limited to 10 and after 100) from a selected so
 	}
 
 
-## Supported Platforms
-
-* .NET 4.5 (Desktop / Server)
-
-
-## Getting Started
-
-[FalconSharp is available on NuGet](https://www.nuget.org/packages/FalconSharp).
-
-	Install-Package FalconSharp
-
-
-## Build
-
-If you prefer, you can compile FalconSharp yourself, you'll need:
-
-* Visual Studio 2012 (or above)
-
-To clone it locally click the "Clone in Windows" button above or run the following git commands.
-
-	git clone https://github.com/UmbrellaInc/FalconSharp.git FalconSharp
-	cd FalconSharp
-	.\build.cmd
-
-
 ## Contact
 
 Have a question?
@@ -66,6 +68,7 @@ Anyone and everyone is welcome to contribute. Please take a moment to review the
 
 
 Special thanks go to [Matt Brailsford](https://github.com/mattbrailsford) for helping to develop this library.
+
 
 ## Copyright and License
 
