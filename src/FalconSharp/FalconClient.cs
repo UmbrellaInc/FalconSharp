@@ -20,10 +20,10 @@ namespace FalconSharp
 			: this(API_BASE_URL, apiKey, proxy)
 		{ }
 
-		public FalconClient(string url, string apiKey, IWebProxy proxy = null)
+		public FalconClient(string baseUrl, string apiKey, IWebProxy proxy = null)
 		{
 			_apiKey = apiKey;
-			_restClient = new RestClient(url);
+			_restClient = new RestClient(baseUrl);
 
 			if (proxy != null)
 				_restClient.Proxy = proxy;
@@ -31,14 +31,16 @@ namespace FalconSharp
 
 		public FalconEntityCollectionResponse<Channel> GetChannels()
 		{
-			return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Channel>>(
-				_apiKey, "channels");
+			return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Channel>>(_apiKey, "channels");
 		}
 
-		public FalconEntityCollectionResponse<Content> GetContent(string channelId,
+		public FalconEntityCollectionResponse<Content> GetContent(
+			string channelId,
 			string[] metrics = null,
-			DateTime? since = null, DateTime? until = null,
-			int? limit = null, int? offset = null)
+			DateTime? since = null,
+			DateTime? until = null,
+			int? limit = null,
+			int? offset = null)
 		{
 			var parameters = new Dictionary<string, string>
 			{
@@ -60,9 +62,7 @@ namespace FalconSharp
 			if (offset.HasValue)
 				parameters.Add("offset", offset.Value.ToString(CultureInfo.InvariantCulture));
 
-			return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Content>>(
-				_apiKey, "channels/{channelId}/content",
-					parameters: parameters);
+			return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Content>>(_apiKey, "channels/{channelId}/content", parameters: parameters);
 		}
 	}
 }

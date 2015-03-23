@@ -7,7 +7,8 @@ namespace FalconSharp.Extensions
 {
 	internal static class RestClientExtensions
 	{
-		public static TReturnType MakeFalconRequest<TReturnType>(this RestClient restClient,
+		public static TReturnType MakeFalconRequest<TReturnType>(
+			this RestClient restClient,
 			string apiKey,
 			string resourePath,
 			Method method = Method.GET,
@@ -41,7 +42,9 @@ namespace FalconSharp.Extensions
 				try
 				{
 					var res = resp.Content.DeserializeJsonTo<TReturnType>();
+
 					res.Success = true;
+
 					return res;
 				}
 				catch (Exception ex)
