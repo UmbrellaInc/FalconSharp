@@ -10,6 +10,7 @@
 		Album,
 		Offer,
 		Question,
-		Event
+		Event,
+		Swf
 	}
 }
