@@ -35,8 +35,7 @@ namespace FalconSharp
 				_apiKey, "channels");
 		}
 
-		public FalconEntityCollectionResponse<Content> GetContent(string channelId,
-			string[] metrics = null,
+		public FalconEntityCollectionResponse<Content> GetChannelContent(string channelId,
 			DateTime? since = null, DateTime? until = null,
 			int? limit = null, int? offset = null)
 		{
@@ -45,8 +44,8 @@ namespace FalconSharp
 				{ "channelId", channelId }
 			};
 
-			if (metrics != null && metrics.Length > 0)
-				parameters.Add("metrics", string.Join(",", metrics));
+			//if (metrics != null && metrics.Length > 0)
+			//	parameters.Add("metrics", string.Join(",", metrics));
 
 			if (since.HasValue)
 				parameters.Add("since", since.Value.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZZ"));
@@ -64,5 +63,48 @@ namespace FalconSharp
 				_apiKey, "channels/{channelId}/content",
 					parameters: parameters);
 		}
+
+        public FalconEntityCollectionResponse<Metric> GetChannelMetrics(string channelId,
+            IEnumerable<string> metrics = null,
+            DateTime? since = null, DateTime? until = null,
+            int? limit = null, int? offset = null,
+            bool replaceMissingValues = false)
+        {
+            return null;
+        }
+
+	    public FalconEntityCollectionResponse<Content> GetContentFeed(
+            DateTime? since = null, DateTime? until = null,
+            int? limit = null, int? offset = null,
+            SortOrder sort = SortOrder.Desc,
+            IEnumerable<string> channels = null,
+            IEnumerable<string> tags = null)
+	    {
+	        return null;
+	    }
+
+        public FalconEntityCollectionResponse<Metric> GetContentMetrics(string contentId,
+            IEnumerable<string> metrics = null,
+            DateTime? since = null, DateTime? until = null,
+            int? limit = null, int? offset = null,
+            bool replaceMissingValues = false)
+        {
+            return null;
+        }
+
+	    public FalconEntityCollectionResponse<User> GetUsers()
+	    {
+	        return null;
+	    }
+
+        public FalconEntityCollectionResponse<User> GetUser(string userId)
+        {
+            return null;
+        }
+
+        public FalconEntityCollectionResponse<Metric> GetUserMetrics(string userId)
+        {
+            return null;
+        }
 	}
 }
