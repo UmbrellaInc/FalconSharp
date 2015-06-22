@@ -35,7 +35,7 @@
 
 	<!-- COMPILE -->
 	<Target Name="Compile" DependsOnTargets="UpdateAssemblyInfo">
-		<MSBuild Projects="$(RootDir)\src\FalconSharp.sln" Properties="Configuration=Release" />
+		<MSBuild Projects="$(RootDir)\src\FalconSharp\FalconSharp.csproj" Properties="Configuration=Release" />
 	</Target>
 
 	<!-- COMPILE -->
