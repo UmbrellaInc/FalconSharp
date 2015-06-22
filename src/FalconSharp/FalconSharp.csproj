@@ -53,9 +53,11 @@
     <Compile Include="FalconResponse.cs" />
     <Compile Include="Models\Channel.cs" />
     <Compile Include="Models\ChannelStatus.cs" />
+    <Compile Include="Models\ChannelSummary.cs" />
     <Compile Include="Models\CollectionResponse.cs" />
     <Compile Include="Models\Content.cs" />
     <Compile Include="Models\ContentStatus.cs" />
+    <Compile Include="Models\UserSummary.cs" />
     <Compile Include="Models\SortOrder.cs" />
     <Compile Include="Models\ContentType.cs" />
     <Compile Include="Models\Metric.cs" />
