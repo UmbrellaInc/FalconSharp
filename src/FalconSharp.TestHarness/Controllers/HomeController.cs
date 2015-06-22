@@ -18,7 +18,7 @@ namespace FalconSharp.TestHarness.Controllers
 		    foreach (var uniqueNetwork in uniqueNetworks)
 		    {
 		        var chan = channels.Items.First(x => x.Network == uniqueNetwork);
-                var content = falcon.GetChannelContent(chan.Id, limit: 10, offset: 100);
+                var content = falcon.GetContentFeed(channels: new[] {chan.Id}, limit: 100);
 		        var t = 1;
 		    }
 
