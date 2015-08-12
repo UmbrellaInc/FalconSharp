@@ -10,9 +10,17 @@ namespace FalconSharp.TestHarness.Controllers
 		{
 			var fiddlerProxy = new WebProxy("127.0.0.1", 8888);
 
-			var falcon = new FalconClient("api_key");
-			var channels = falcon.GetChannels();
-			var content = falcon.GetContent(channels.Items.First().Id, limit: 10, offset: 100);
+            //var falcon = new FalconClient("api_key");
+            var falcon = new FalconClient("api_key", fiddlerProxy);
+            var channels = falcon.GetChannels();
+		    var uniqueNetworks = channels.Items.Select(x => x.Network).Distinct().ToArray();
+
+		    foreach (var uniqueNetwork in uniqueNetworks)
+		    {
+		        var chan = channels.Items.First(x => x.Network == uniqueNetwork);
+                var content = falcon.GetContentFeed(channels: new[] {chan.Id}, limit: 100);
+		        var t = 1;
+		    }
 
 			return View();
 		}

@@ -15,7 +15,7 @@
 	<PropertyGroup>
 		<VersionMajor>0</VersionMajor>
 		<VersionMinor>2</VersionMinor>
-		<VersionPatch>0</VersionPatch>
+		<VersionPatch>1</VersionPatch>
 		<VersionSuffix></VersionSuffix>
 	</PropertyGroup>
 
@@ -35,7 +35,7 @@
 
 	<!-- COMPILE -->
 	<Target Name="Compile" DependsOnTargets="UpdateAssemblyInfo">
-		<MSBuild Projects="$(RootDir)\src\FalconSharp.sln" Properties="Configuration=Release" />
+		<MSBuild Projects="$(RootDir)\src\FalconSharp\FalconSharp.csproj" Properties="Configuration=Release" />
 	</Target>
 
 	<!-- COMPILE -->

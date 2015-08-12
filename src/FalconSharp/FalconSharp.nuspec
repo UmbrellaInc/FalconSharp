@@ -8,7 +8,7 @@
 		<owners>$author$</owners>
 		<licenseUrl>https://github.com/UmbrellaInc/FalconSharp/blob/master/LICENSE.md</licenseUrl>
 		<projectUrl>https://github.com/UmbrellaInc/FalconSharp</projectUrl>
-		<iconUrl></iconUrl>
+		<iconUrl>https://s3.amazonaws.com/cloud.ohloh.net/attachments/40032/nuget-64x64_small.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<summary>An unofficial client library for the beta Content API from Falcon Social</summary>
 		<description>
