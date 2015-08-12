@@ -8,32 +8,32 @@ using RestSharp;
 
 namespace FalconSharp
 {
-	public class FalconClient
-	{
-		private const string API_BASE_URL = "https://app.falconsocial.com/v1";
+    public class FalconClient
+    {
+        private const string API_BASE_URL = "https://app.falconsocial.com/v1";
 
-		private string _apiKey;
+        private string _apiKey;
 
-		private RestClient _restClient;
+        private RestClient _restClient;
 
-		public FalconClient(string apiKey, IWebProxy proxy = null)
-			: this(API_BASE_URL, apiKey, proxy)
-		{ }
+        public FalconClient(string apiKey, IWebProxy proxy = null)
+            : this(API_BASE_URL, apiKey, proxy)
+        { }
 
-		public FalconClient(string url, string apiKey, IWebProxy proxy = null)
-		{
-			_apiKey = apiKey;
-			_restClient = new RestClient(url);
+        public FalconClient(string url, string apiKey, IWebProxy proxy = null)
+        {
+            _apiKey = apiKey;
+            _restClient = new RestClient(url);
 
-			if (proxy != null)
-				_restClient.Proxy = proxy;
-		}
+            if (proxy != null)
+                _restClient.Proxy = proxy;
+        }
 
-		public FalconEntityCollectionResponse<Channel> GetChannels()
-		{
-			return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Channel>>(
-				_apiKey, "channels");
-		}
+        public FalconEntityCollectionResponse<Channel> GetChannels()
+        {
+            return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Channel>>(
+                _apiKey, "channels");
+        }
 
         //public FalconEntityCollectionResponse<Content> GetChannelContent(string channelId,
         //    DateTime? since = null, DateTime? until = null,
@@ -72,17 +72,17 @@ namespace FalconSharp
         //    throw new NotImplementedException();
         //}
 
-	    public FalconEntityCollectionResponse<Content> GetContentFeed(
+        public FalconEntityCollectionResponse<Content> GetContentFeed(
             DateTime? since = null, DateTime? until = null,
             int? limit = null, int? offset = null,
             SortOrder sort = SortOrder.Desc,
             IEnumerable<string> channels = null,
             IEnumerable<string> tags = null)
-	    {
-	        var parameters = new Dictionary<string, string>
-	        {
-	            {"sort", sort.ToString().ToLower()}
-	        };
+        {
+            var parameters = new Dictionary<string, string>
+            {
+                {"sort", sort.ToString().ToLower()}
+            };
 
             if (since.HasValue)
                 parameters.Add("since", since.Value.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZZ"));
@@ -105,7 +105,7 @@ namespace FalconSharp
             return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Content>>(
                 _apiKey, "content/feed",
                     parameters: parameters);
-	    }
+        }
 
         //public FalconEntityCollectionResponse<Metric> GetContentMetrics(string contentId,
         //    IEnumerable<string> metrics = null,
@@ -130,5 +130,5 @@ namespace FalconSharp
         //{
         //    throw new NotImplementedException();
         //}
-	}
+    }
 }

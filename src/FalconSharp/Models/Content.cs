@@ -4,13 +4,13 @@ using Newtonsoft.Json;
 
 namespace FalconSharp.Models
 {
-	public class Content
-	{
+    public class Content
+    {
         [JsonProperty("id")]
-		public string Id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty("network")]
-		public string Network { get; set; }
+        public string Network { get; set; }
 
         //[JsonProperty("status")]
         //public ContentStatus Status { get; set; }
@@ -22,7 +22,7 @@ namespace FalconSharp.Models
         //public string Description { get; set; }
 
         [JsonProperty("message")]
-		public string Message { get; set; }
+        public string Message { get; set; }
 
         [JsonProperty("picture")]
         public string Picture { get; set; }
@@ -55,16 +55,16 @@ namespace FalconSharp.Models
         public ChannelSummary Channel { get; set; }
 
         [JsonProperty("type")]
-		public ContentType Type { get; set; }
+        public ContentType Type { get; set; }
 
         [JsonProperty("tags")]
-		public IEnumerable<string> Tags { get; set; }
+        public IEnumerable<string> Tags { get; set; }
 
         [JsonProperty("stats")]
-		public IDictionary<string, object> Stats { get; set; }
+        public IDictionary<string, object> Stats { get; set; }
 
         [JsonProperty("createdDate")]
-		public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
         [JsonProperty("modifiedDate")]
         public DateTime ModifiedDate { get; set; }
@@ -74,5 +74,5 @@ namespace FalconSharp.Models
 
         //[JsonProperty("unPublished")]
         //public bool Unpublished { get; set; }
-	}
+    }
 }

@@ -7,8 +7,8 @@ namespace FalconSharp.Extensions
 {
     internal static class RestClientExtensions
     {
-		public static TReturnType MakeFalconRequest<TReturnType>(
-			this RestClient restClient,
+        public static TReturnType MakeFalconRequest<TReturnType>(
+            this RestClient restClient,
             string apiKey,
             string resourcePath,
             Method method = Method.GET,
