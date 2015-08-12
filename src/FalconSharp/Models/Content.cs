@@ -15,8 +15,8 @@ namespace FalconSharp.Models
         //[JsonProperty("status")]
         //public ContentStatus Status { get; set; }
 
-        [JsonProperty("name")]
-		public string Name { get; set; }
+        //[JsonProperty("name")]
+        //public string Name { get; set; }
 
         //[JsonProperty("description")]
         //public string Description { get; set; }
