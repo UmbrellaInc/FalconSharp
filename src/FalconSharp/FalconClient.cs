@@ -47,10 +47,10 @@ namespace FalconSharp
         //    //};
 
         //    //if (since.HasValue)
-        //    //    parameters.Add("since", since.Value.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZZ"));
+        //    //    parameters.Add("since", since.Value.ToString("o"));
 
         //    //if (until.HasValue)
-        //    //    parameters.Add("until", until.Value.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZZ"));
+        //    //    parameters.Add("until", until.Value.ToString("o"));
 
         //    //if (limit.HasValue)
         //    //    parameters.Add("limit", limit.Value.ToString(CultureInfo.InvariantCulture));
@@ -85,10 +85,10 @@ namespace FalconSharp
 	        };
 
             if (since.HasValue)
-                parameters.Add("since", since.Value.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZZ"));
+                parameters.Add("since", since.Value.ToString("o"));
 
             if (until.HasValue)
-                parameters.Add("until", until.Value.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZZ"));
+                parameters.Add("until", until.Value.ToString("o"));
 
             if (limit.HasValue)
                 parameters.Add("limit", limit.Value.ToString(CultureInfo.InvariantCulture));
