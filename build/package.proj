@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CleanUp" ToolsVersion="4.0">
+
+	<!-- PATHS -->
+	<PropertyGroup>
+		<RootDir>$(MSBuildProjectDirectory)\..</RootDir>
+		<ArtifactsDir>$(RootDir)\artifacts</ArtifactsDir>
+		<BuildDir>$(RootDir)\build</BuildDir>
+		<BuildNuGetDir>$(BuildDir)\_nuget</BuildNuGetDir>
+		<MSBuildCommunityTasksPath>$(RootDir)\src\packages\MSBuildTasks.1.4.0.78\tools\</MSBuildCommunityTasksPath>
+		<AppVeyorUmbracoPath>$(MSBuildProjectDirectory)\tools\AppVeyorUmbraco</AppVeyorUmbracoPath>
+	</PropertyGroup>
+
+	<!-- IMPORTS -->
+	<Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
+	<Import Project="$(AppVeyorUmbracoPath)\AppVeyorUmbraco.Targets" />
+
+	<!-- APPVEYOR PROPERTIES -->
+	<PropertyGroup>
+		<FileVersion>$(APPVEYOR_BUILD_VERSION)</FileVersion>
+	</PropertyGroup>
+	<Choose>
+		<When Condition="$(APPVEYOR_BUILD_NUMBER) != '' And $(APPVEYOR_REPO_TAG) != 'true' ">
+			<PropertyGroup>
+				<Release>false</Release>
+			</PropertyGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				<Release>true</Release>
+			</PropertyGroup>
+		</Otherwise>
+	</Choose>
+	<Choose>
+		<When Condition="$(Release) == 'false' And $(UMBRACO_PACKAGE_PRERELEASE_SUFFIX) == 'rtm'">
+			<PropertyGroup>
+				<AbortBuild>true</AbortBuild>
+			</PropertyGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				<AbortBuild>false</AbortBuild>
+			</PropertyGroup>
+		</Otherwise>
+	</Choose>
+
+	<!-- TARGETS -->
+	<Target Name="GetProductVersion">
+		<Error Condition="$(AbortBuild) == 'true'" Text="Aborting the build as the UMBRACO_PACKAGE_PRERELEASE_SUFFIX suffix is set 'rtm' but APPVEYOR_REPO_TAG is not 'true'" />
+		<GetProductVersion BuildVersion="$(APPVEYOR_BUILD_VERSION)" BuildSuffix="$(UMBRACO_PACKAGE_PRERELEASE_SUFFIX)" Release="$(Release)">
+			<Output TaskParameter="ProductVersion" PropertyName="ProductVersion"/>
+		</GetProductVersion>
+	</Target>
+
+	<!-- CLEAN -->
+	<Target Name="Clean" DependsOnTargets="GetProductVersion">
+		<RemoveDir Directories="$(ArtifactsDir)" Condition="Exists('$(ArtifactsDir)')" />
+		<RemoveDir Directories="$(BuildNuGetDir)" Condition="Exists('$(BuildNuGetDir)')" />
+		<MakeDir Directories="$(ArtifactsDir)" />
+		<MakeDir Directories="$(BuildNuGetDir)" />
+	</Target>
+
+	<!-- UPDATE PROJECT ASSEMBLEY VERSION -->
+	<Target Name="UpdateAssemblyInfo" DependsOnTargets="Clean">
+		<AssemblyInfo CodeLanguage="CS"
+			OutputFile="$(RootDir)\src\FalconSharp\Properties\VersionInfo.cs"
+			AssemblyVersion="1.0.*"
+			AssemblyInformationalVersion="$(ProductVersion)"/>
+	</Target>
+
+	<!-- COMPILE -->
+	<Target Name="Compile" DependsOnTargets="UpdateAssemblyInfo">
+		<MSBuild Projects="$(RootDir)\src\FalconSharp\FalconSharp.csproj" Properties="Configuration=Release" />
+	</Target>
+
+	<!-- COMPILE -->
+	<Target Name="NuGet" DependsOnTargets="Compile">
+		<Exec WorkingDirectory="$(RootDir)" Command="$(RootDir)\src\.nuget\NuGet.exe pack $(RootDir)\src\FalconSharp\FalconSharp.csproj -Properties Configuration=Release -OutputDirectory artifacts -Symbols" />
+	</Target>
+
+	<Target Name="CleanUp" DependsOnTargets="NuGet">
+		<RemoveDir Directories="$(BuildNuGetDir)" Condition="Exists('$(BuildNuGetDir)')" />
+	</Target>
+
+</Project>
