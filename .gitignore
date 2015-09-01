@@ -1,15 +1,15 @@
 _ReSharper.*
-[Bb]in
-[Bb]uild
-[Oo]bj
+[Bb]in/
+[Oo]bj/
 *.suo
 *.user
+*.userprefs
 *.cache
 *.orig
 Thumbs.db
 .DS_Store
+*.log
 
-*.zip
-
+artifacts/
 docs/*.pdf
 src/packages/*/**
