@@ -1,5 +1,7 @@
 # FalconSharp
 
+[![Build status](https://img.shields.io/appveyor/ci/leekelleher/falconsharp.svg)](https://ci.appveyor.com/project/leekelleher/falconsharp)
+
 FalconSharp is an unofficial client library for accessing the beta *Content API* from [Falcon Social](http://www.falconsocial.com/).
 
 
@@ -16,10 +18,9 @@ FalconSharp is an unofficial client library for accessing the beta *Content API*
 
 	Install-Package FalconSharp
 
+### Manual build
 
-### Build
-
-If you prefer, you can compile FalconSharp yourself, you'll need:
+If you prefer, you can compile the project yourself, you'll need:
 
 * Visual Studio 2012 (or above)
 
