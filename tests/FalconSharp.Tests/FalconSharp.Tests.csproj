@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="ApiControllers\MockFalconApiController.cs" />
     <Compile Include="FalconClientTests.cs" />
+    <Compile Include="MockFalconServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
