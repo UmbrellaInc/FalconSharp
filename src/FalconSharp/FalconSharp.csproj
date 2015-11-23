@@ -46,6 +46,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\PullRequestRequiredException.cs" />
     <Compile Include="Extensions\JsonExtensions.cs" />
     <Compile Include="Extensions\RestClientExtensions.cs" />
     <Compile Include="FalconClient.cs" />
@@ -58,7 +59,9 @@
     <Compile Include="Models\ChannelSummary.cs" />
     <Compile Include="Models\CollectionResponse.cs" />
     <Compile Include="Models\Content.cs" />
+    <Compile Include="Models\ContentStats.cs" />
     <Compile Include="Models\ContentStatus.cs" />
+    <Compile Include="Models\NetworkType.cs" />
     <Compile Include="Models\UserSummary.cs" />
     <Compile Include="Models\SortOrder.cs" />
     <Compile Include="Models\ContentType.cs" />

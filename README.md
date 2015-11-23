@@ -42,10 +42,10 @@ List all of the social channels from the associated organisation account:
 		Console.WriteLine(channel.Name);
 	}
 
-Get paged social content items, (limited to 10 and after 100) from a selected social channel:
+Get paged social content items, (limited to 10) from a selected social channel:
 
 	var falcon = new FalconClient("api_key");
-	var content = falcon.GetContent("channel_name", limit: 10, offset:100);
+	var content = falcon.GetContent("channel_name", limit: 10);
 	foreach (var item in content.Items)
 	{
 		Console.WriteLine("{0}: {1} - {2}", item.Network, item.Name, item.Message);
@@ -73,6 +73,10 @@ Special thanks go to [Matt Brailsford](https://github.com/mattbrailsford) for he
 
 ## Copyright and License
 
-Copyright &copy; 2014 Umbrella Inc
+Copyright &copy; 2014-2015 Umbrella Inc
 
 Licensed under the [MIT License](LICENSE.md)
+
+### Logo Credit
+
+[Temp falcon](https://en.wikipedia.org/wiki/File:Temp_falcon.svg) by [Wilsonbiggs](https://en.wikipedia.org/wiki/User:Wilsonbiggs) - conv. Licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) via [Wikipedia](https://en.wikipedia.org/wiki/)

@@ -18,7 +18,7 @@ namespace FalconSharp.Extensions
         {
             // Construct the request
             var req = new RestRequest(resourcePath, method);
-            req.AddHeader("X-Falcon-ApiKey", apiKey);
+            req.AddParameter("apikey", apiKey);
             req.OnBeforeDeserialization = response => { response.ContentType = "application/json"; };
 
             if (parameters != null)
