@@ -1,5 +1,4 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace FalconSharp.Models
 {
@@ -16,12 +15,6 @@ namespace FalconSharp.Models
 
         [JsonProperty("status")]
         public ChannelStatus Status { get; set; }
-
-        [JsonProperty("disabledWarning")]
-        public string DisabledWarning { get; set; }
-
-        [JsonProperty("disabledDate")]
-        public DateTime DisabledDate { get; set; }
 
         [JsonProperty("profileImageUrl")]
         public string ProfileImageUrl { get; set; }

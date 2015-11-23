@@ -1,7 +1,6 @@
 ﻿namespace FalconSharp
 {
-    public class FalconPagedEntityCollectionResponse<TEntity>
-        : FalconEntityCollectionResponse<TEntity>
+    public class FalconPagedEntityCollectionResponse<TEntity> : FalconEntityCollectionResponse<TEntity>
     {
         public int CurrentPage { get; set; }
 
