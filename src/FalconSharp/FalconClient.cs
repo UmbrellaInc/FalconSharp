@@ -32,9 +32,14 @@ namespace FalconSharp
             }
         }
 
-        public FalconEntityCollectionResponse<Channel> GetChannels()
+        public FalconEntityCollectionResponse<Channel> GetChannels(int? limit = null)
         {
-            return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Channel>>(_apiKey, "channels/");
+            var parameters = new Dictionary<string, string>();
+
+            if (limit.HasValue)
+                parameters.Add("limit", limit.Value.ToString(CultureInfo.InvariantCulture));
+
+            return _restClient.MakeFalconRequest<FalconEntityCollectionResponse<Channel>>(_apiKey, "channels/", parameters: parameters);
         }
 
         public FalconEntityResponse<Channel> GetChannel(string channelId)
