@@ -14,7 +14,7 @@
 		<description>
 			<![CDATA[An unofficial client library for the beta Content API from Falcon Social]]>
 		</description>
-		<copyright>Copyright &#169; 2014-2015 Umbrella Inc Ltd</copyright>
+		<copyright>Copyright &#169; 2014 Umbrella Inc Ltd</copyright>
 		<tags>falcon social api</tags>
 		<dependencies />
 	</metadata>

@@ -73,7 +73,7 @@ Special thanks go to [Matt Brailsford](https://github.com/mattbrailsford) for he
 
 ## Copyright and License
 
-Copyright &copy; 2014-2015 Umbrella Inc
+Copyright &copy; 2014 Umbrella Inc and [other contributors](https://github.com/UmbrellaInc/FalconSharp/graphs/contributors)
 
 Licensed under the [MIT License](LICENSE.md)
 
