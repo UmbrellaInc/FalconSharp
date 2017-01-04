@@ -10,7 +10,7 @@ namespace FalconSharp
 {
     public class FalconClient
     {
-        private const string API_BASE_URL = "https://falconsocial-prod.apigee.net/";
+        private const string API_BASE_URL = "https://api.falcon.io/";
 
         private string _apiKey;
 
