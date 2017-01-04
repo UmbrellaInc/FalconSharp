@@ -1,7 +1,6 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FalconSharp", "FalconSharp\FalconSharp.csproj", "{EB456909-B7BD-44F5-A6B2-20493A5F93DC}"
 EndProject
@@ -21,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Package", "Build Pack
 		..\appveyor.yml = ..\appveyor.yml
 		..\build-appveyor.cmd = ..\build-appveyor.cmd
 		..\build.cmd = ..\build.cmd
+		FalconSharp\FalconSharp.nuspec = FalconSharp\FalconSharp.nuspec
 		..\build\package.proj = ..\build\package.proj
 	EndProjectSection
 EndProject
@@ -49,8 +49,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{EA712CFD-8AC1-4B29-9C2C-73C9A56586AC} = {B707C7EE-C1E8-4EC6-9B9E-7A30A5293C28}
-		{2C5E611D-EAAF-4CA4-BB0C-E03598E3A63C} = {B707C7EE-C1E8-4EC6-9B9E-7A30A5293C28}
 		{54F5719A-ADC0-4498-A208-204FA8BFA3E1} = {EA712CFD-8AC1-4B29-9C2C-73C9A56586AC}
+		{2C5E611D-EAAF-4CA4-BB0C-E03598E3A63C} = {B707C7EE-C1E8-4EC6-9B9E-7A30A5293C28}
+		{EA712CFD-8AC1-4B29-9C2C-73C9A56586AC} = {B707C7EE-C1E8-4EC6-9B9E-7A30A5293C28}
 	EndGlobalSection
 EndGlobal
