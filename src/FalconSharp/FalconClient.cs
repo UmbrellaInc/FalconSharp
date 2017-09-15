@@ -23,6 +23,14 @@ namespace FalconSharp
 
         public FalconClient(string url, string apiKey, IWebProxy proxy = null)
         {
+            // It appears that Falcon have enabled TLS 1.2 encryption.
+            // Check if `SecurityProtocol` has TLS 1.2 enabled, if not, enable it.
+            if (!ServicePointManager.SecurityProtocol.HasFlag(SecurityProtocolType.Tls12))
+            {
+                // for reference: https://groups.google.com/d/msg/devtargetprocess/1R1niz_WCFE/2-PvKltxBgAJ
+                ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol | SecurityProtocolType.Tls12;
+            }
+
             _apiKey = apiKey;
             _restClient = new RestClient(url);
 
