@@ -2,6 +2,8 @@
 
 namespace FalconSharp
 {
+    // Kudos to @aaronpowell for `PullRequestRequiredException` idea!
+    // https://gist.github.com/aaronpowell/2708280
     internal class PullRequestRequiredException : NotImplementedException
     {
         public PullRequestRequiredException()
