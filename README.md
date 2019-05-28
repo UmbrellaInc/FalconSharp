@@ -1,6 +1,6 @@
 # FalconSharp
 
-[![Build status](https://img.shields.io/appveyor/ci/leekelleher/falconsharp.svg)](https://ci.appveyor.com/project/leekelleher/falconsharp)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 FalconSharp is an unofficial client library for accessing the beta *Content API* from [Falcon Social](http://www.falconsocial.com/).
 
